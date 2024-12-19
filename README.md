@@ -7,17 +7,16 @@
 
 <section>
     <h2>Funcionalidades</h2>
-    <ul>
-        <li><strong>Cadastro de Usuários</strong>: O sistema permite o registro de dois usuários diferentes, cada um com suas credenciais únicas.</li>
-        <li><strong>Visualização de Vagas</strong>: O sistema exibe a disponibilidade das vagas de estacionamento, com informações em tempo real.</li>
-    </ul>
-
+    
+        <strong>Cadastro de Usuários</strong>: O sistema permite o registro de dois usuários diferentes, cada um com suas credenciais únicas.
+        <strong>Visualização de Vagas</strong>: O sistema exibe a disponibilidade das vagas de estacionamento, com informações em tempo real.
+    
     <h2>Tecnologias Utilizadas</h2>
-    <ul>
-        <li><strong>HTML</strong>: Estrutura básica da página e dos formulários de entrada de dados.</li>
-        <li><strong>CSS</strong>: Estilos para criar uma interface agradável e responsiva.</li>
-        <li><strong>JavaScript</strong>: Lógica do sistema, interatividade e manipulação de dados.</li>
-    </ul>
+    
+        <strong>HTML</strong>: Estrutura básica da página e dos formulários de entrada de dados.
+        <strong>CSS</strong>: Estilos para criar uma interface agradável e responsiva.
+        <strong>JavaScript</strong>: Lógica do sistema, interatividade e manipulação de dados.
+    
 </section>
 
 <section>
