@@ -1,62 +1,4 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sistema de Estacionamento - README</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 0;
-            color: #333;
-        }
-        header {
-            background-color: #2c3e50;
-            color: white;
-            padding: 20px 0;
-            text-align: center;
-        }
-        header h1 {
-            margin: 0;
-        }
-        section {
-            padding: 20px;
-        }
-        h2 {
-            color: #34495e;
-        }
-        ul {
-            list-style-type: none;
-            padding-left: 0;
-        }
-        li {
-            padding: 8px;
-            margin: 5px 0;
-            background-color: #ecf0f1;
-            border-left: 4px solid #3498db;
-        }
-        .code {
-            background-color: #2d3e50;
-            color: #fff;
-            padding: 5px 10px;
-            border-radius: 3px;
-            font-family: Consolas, monospace;
-            font-size: 16px;
-        }
-        footer {
-            background-color: #2c3e50;
-            color: white;
-            text-align: center;
-            padding: 10px;
-            position: fixed;
-            width: 100%;
-            bottom: 0;
-        }
-    </style>
-</head>
-<body>
+
 
 <header>
     <h1>Sistema de Estacionamento</h1>
@@ -113,5 +55,3 @@
     <p>&copy; 2024 Sistema de Estacionamento | Desenvolvido por Luan da Costa Silva & Rebecca Januario</p>
 </footer>
 
-</body>
-</html>
