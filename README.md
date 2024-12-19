@@ -45,8 +45,8 @@
 <section>
     <h2>Equipe</h2>
     <ul>
-        <li><strong>Luan da Costa Silva</strong>: Desenvolvedor Frontend e Responsável pela Implementação do Layout</li>
-        <li><strong>Rebecca Januario</strong>: Desenvolvedora Frontend e Responsável pela Lógica de Funcionalidades</li>
+        <li><strong>Luan da Costa Silva</strong>: Desenvolvedora Frontend e Responsável pela Lógica de Funcionalidades </li>
+        <li><strong>Rebecca Januario</strong>: Desenvolvedor Frontend e Responsável pela Implementação do Layout</li>
     </ul>
 </section>
 
