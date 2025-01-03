@@ -2,41 +2,23 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-app.js";
 import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, signOut, signInWithPopup, GoogleAuthProvider } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-auth.js";
 
-
-// Your web app's Firebase configuration
+// Firebase configuration
 const firebaseConfig = {
-
-  apiKey: "AIzaSyBl-lD-fRu11LNzMG3zG-mDTdxHpiJstsI",
-
-  authDomain: "estacionamento-6cd30.firebaseapp.com",
-
-  databaseURL: "https://estacionamento-6cd30-default-rtdb.firebaseio.com",
-
-  projectId: "estacionamento-6cd30",
-
-  storageBucket: "estacionamento-6cd30.firebasestorage.app",
-
-  messagingSenderId: "35569369977",
-
-  appId: "1:35569369977:web:06667d4ec513a41f9425a8"
-
+    apiKey: "AIzaSyBl-lD-fRu11LNzMG3zG-mDTdxHpiJstsI",
+    authDomain: "estacionamento-6cd30.firebaseapp.com",
+    databaseURL: "https://estacionamento-6cd30-default-rtdb.firebaseio.com",
+    projectId: "estacionamento-6cd30",
+    storageBucket: "estacionamento-6cd30.firebasestorage.app",
+    messagingSenderId: "35569369977",
+    appId: "1:35569369977:web:06667d4ec513a41f9425a8",
 };
-
-
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const auth = getAuth();
 const provider = new GoogleAuthProvider();
 
-// Seleção de elementos
-document.addEventListener("DOMContentLoaded", () => {
-  const users = {
-    "admin@neymarparking.com": "paginaAdmin.html",
-    "func@neymarparking.com": "paginaFunc.html",
-  };
-
-  
+// Seleção de elementos HTML
 const emailInput = document.getElementById('emailInput');
 const passwordInput = document.getElementById('passwordInput');
 const loginBtn = document.getElementById('loginBtn');
@@ -44,14 +26,27 @@ const createAccountBtn = document.getElementById('createAccountBtn');
 const googleLoginBtn = document.getElementById('googleLoginBtn');
 const logoutBtn = document.getElementById('logoutBtn');
 
+// Lista de e-mails e páginas associadas
+const userPages = {
+    "admin@neymarparking.com": "paginaAdmin.html",
+    "func@neymarparking.com": "paginaFunc.html",
+};
+
 // Login com email e senha
 loginBtn.addEventListener('click', async () => {
     try {
         const email = emailInput.value;
         const password = passwordInput.value;
         const userCredential = await signInWithEmailAndPassword(auth, email, password);
-        alert(`Bem-vindo, ${userCredential.user.email}`);
-        logoutBtn.classList.remove('d-none');
+        const userEmail = userCredential.user.email;
+
+        // Verificar e-mail e redirecionar para a página correspondente
+        if (userPages[userEmail]) {
+            alert(`Bem-vindo, ${userEmail}`);
+            window.location.href = userPages[userEmail];
+        } else {
+            alert('Usuário não autorizado.');
+        }
     } catch (error) {
         alert('Erro ao fazer login: ' + error.message);
     }
@@ -62,7 +57,7 @@ createAccountBtn.addEventListener('click', async () => {
     try {
         const email = emailInput.value;
         const password = passwordInput.value;
-        const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+        await createUserWithEmailAndPassword(auth, email, password);
         alert('Conta criada com sucesso!');
     } catch (error) {
         alert('Erro ao criar conta: ' + error.message);
@@ -73,8 +68,15 @@ createAccountBtn.addEventListener('click', async () => {
 googleLoginBtn.addEventListener('click', async () => {
     try {
         const result = await signInWithPopup(auth, provider);
-        alert('Login com Google bem-sucedido!');
-        logoutBtn.classList.remove('d-none');
+        const userEmail = result.user.email;
+
+        // Verificar e-mail e redirecionar para a página correspondente
+        if (userPages[userEmail]) {
+            alert(`Login com Google bem-sucedido! Bem-vindo, ${userEmail}`);
+            window.location.href = userPages[userEmail];
+        } else {
+            alert('Usuário não autorizado.');
+        }
     } catch (error) {
         alert('Erro ao fazer login com Google: ' + error.message);
     }
@@ -90,7 +92,3 @@ logoutBtn.addEventListener('click', async () => {
         alert('Erro ao sair: ' + error.message);
     }
 });
-
-});
-
-
